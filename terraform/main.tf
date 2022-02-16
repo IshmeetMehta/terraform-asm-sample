@@ -16,8 +16,4 @@ module "asm" {
   cluster_name     = module.gke.name
   cluster_location = var.region
   project_id       = module.enabled_google_apis.project_id
-  //mesh_config = {map()}
-  //mesh_config      = ""
-  //enable_mdp = false
-   
 }
