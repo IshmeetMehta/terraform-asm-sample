@@ -6,7 +6,7 @@ variable "project_id" {
 variable "region" {
   type        = string
   description = "the GCP region where the cluster will be created"
-  default = "us-central1"
+  default     = "us-central1"
 }
 
 variable "zone" {

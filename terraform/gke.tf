@@ -18,11 +18,10 @@ module "enabled_google_apis" {
     "anthos.googleapis.com",
     "container.googleapis.com",
     "gkeconnect.googleapis.com",
-    "anthosconfigmanagement.googleapis.com",
-    "cloudresourcemanager.googleapis.com",
-    "gkehub.googleapis.com"
+    "gkehub.googleapis.com",
+    "meshconfig.googleapis.com",
   ]
- 
+
 }
 
 # google_client_config and kubernetes provider must be explicitly specified like the following.

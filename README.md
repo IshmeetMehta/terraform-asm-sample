@@ -25,31 +25,6 @@
     gcloud alpha billing projects link $PROJECT_ID --billing-account $BILLING_ACCOUNT
     gcloud config set project $PROJECT_ID
     ```
-1. Enable the compute api for the project:
-
-    ```bash
-    gcloud services enable compute.googleapis.com --project $PROJECT_ID
-
-    The output is similar to the following:
-    Operation "operations/acf.p2-42486643714-242126b9-b72c-49fb-b4b4-53d4dae2101e" finished successfully.
-    ```
-
-
-1. Enable the service mesh feature:
-
-    ```bash
-    gcloud container hub mesh enable --project $PROJECT_ID
-
-    The output is similar to the following:
-
-    Enabling service [meshconfig.googleapis.com] on project [xxx]...
-    Operation "operations/acat.p2-1063239217441-cd1763ba-264c-4ec2-9346-2e046fc03062" finished successfully.
-    API [gkehub.googleapis.com] not enabled on project [1063239217441]. Would you like to enable and retry (this will take a few minutes)? (y/N)?  y
-
-    Enabling service [gkehub.googleapis.com] on project [xxxx]...
-    Operation "operations/acat.p2-1063239217441-4a50584e-7ee4-4702-9b61-453ba2a5ba55" finished successfully.
-    Waiting for Feature Service Mesh to be created...done. 
-    ```
 
 1. Create cluster using terraform using defaults other than the project:
 
@@ -79,7 +54,7 @@
 
 
     # First lets get the credentials for the GKE cluster 
-    gcloud container clusters get-credentials "asm-cluster-1"--region "us-central1"--project $PROJECT_ID
+    gcloud container clusters get-credentials asm-cluster-1 --region "us-central1" --project $PROJECT_ID
 
 
     # Inspect the state of controlplanerevision CustomResource
